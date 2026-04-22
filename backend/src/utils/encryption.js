@@ -1,8 +1,10 @@
 const crypto = require('crypto');
+require('dotenv').config({path: '.env'});
+
 
 // In production, this MUST be a 32-byte string stored in our .env file
 const ENCRYPTION_KEY = process.env.ENCRYPTION_KEY ? Buffer.from(process.env.ENCRYPTION_KEY, 'hex') : crypto.randomBytes(32);
-const ALGORITHM = 'aes-256-gcm';
+const ALGORITHM = process.env.ENCRYPTION_ALGORITHM;
 
 
 function encryptApiKey(text) {
@@ -32,3 +34,12 @@ function decryptApiKey(encryptedData) {
     return decrypted;
 }
 
+// test in locally
+// const rawKey = "sk-ant-api03-MySuperSecretAnthropicKey-12345";
+// console.log("1. Original Key:", rawKey);
+
+// const encryptedKey = encryptApiKey(rawKey);
+// console.log("2. What goes into the database:", encryptedKey);
+
+// const decryptedKey = decryptApiKey(encryptedKey);
+// console.log("3. Decrypted for agent use:", decryptedKey);
