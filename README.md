@@ -1,5 +1,6 @@
 # Mini Agent Hub
 [Interface](media/mini-agent-hub-look.png)
+
 A lightweight platform for deploying AI agents with customizable skills and tools. Build, configure, and deploy intelligent agents with modular functionality through an intuitive web interface.
 
 ## 📋 Table of Contents
