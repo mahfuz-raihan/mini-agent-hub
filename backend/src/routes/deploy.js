@@ -6,7 +6,14 @@ function handleDeployment(reqBody) {
     console.log("1. Received deployment request:", reqBody);
     
     // 2. Load the base template
-    const templatePath = path.join(__dirname, 'templates/baseAgent.json');
+    const templatePath = path.join(__dirname, '../../templates/baseAgent.json');
+    // check to ensure the template file exists before reading
+    if (!fs.existsSync(templatePath)) {
+        console.error(`\n[Error] Template file not found at path: ${templatePath}`);
+        console.error("-> Fix: Make sure the 'templates' folder is directly inside the 'backend' folder\n")
+        return;
+    }
+
     const baseTemplate = JSON.parse(fs.readFileSync(templatePath, 'utf8'));
 
     // 3. Inject the selected skills (Add-ons)
@@ -23,3 +30,11 @@ function handleDeployment(reqBody) {
 
     return baseTemplate;
 }
+
+// test in locally
+const mockFrontendRequest = {
+    userId: "user_123",
+    skills: ["weather"]
+};
+
+handleDeployment(mockFrontendRequest);
