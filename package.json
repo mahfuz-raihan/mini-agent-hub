@@ -1,0 +1,27 @@
+{
+  "name": "mini-agent-hub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahfuz-raihan/mini-agent-hub.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/mahfuz-raihan/mini-agent-hub/issues"
+  },
+  "homepage": "https://github.com/mahfuz-raihan/mini-agent-hub#readme",
+  "dependencies": {
+    "dotenv": "^17.4.2"
+  }
+}
