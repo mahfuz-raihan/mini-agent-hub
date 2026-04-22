@@ -22,6 +22,8 @@
   },
   "homepage": "https://github.com/mahfuz-raihan/mini-agent-hub#readme",
   "dependencies": {
-    "dotenv": "^17.4.2"
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
   }
 }
